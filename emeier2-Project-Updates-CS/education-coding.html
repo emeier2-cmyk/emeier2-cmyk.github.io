@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmett's Portfolio</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+<body>
+    <header>
+        <img src="asu-logo.jpg" alt="ASU Logo" id="logo">
+        <h1>Emmett Meier</h1>
+        <h2>Professional and Academic Portfolio</h2>
+    </header>
+
+    <nav>   
+        <ul>
+            <a href="PortfolioSite.html">About Me</a>
+            <li class="nav-item dropdown">
+            <a href="education.html">Education</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education-coding.html">Coding</a></li>
+                    <li><a href="education-dataanalysis.html">Data Analysis</a></li>
+                    <li><a href="education-technicalskills.html">Technical Skills</a></li>
+                </ul>
+            </li>
+            <a href="experience.html">Professional Experience</a>
+            <a href="contact.html">Contact Me</a>
+        </ul>
+    </nav>
+    <div class="grid">
+        <section id="about-grid">
+        </section>
+
+        <section id="contact-grid">
+        </section>
+    </div>
+    <div class="code-sql-container">
+        <section id="code-gallery-grid">
+            <h4>Python Coding Assignments</h4>
+            <div class="code-gallery">
+                <div class="code-gallery-main">
+                    <button class="code-gallery-arrow prev" id="codePrevBtn">❮</button>
+                    <pre><code id="codeDisplay"></code></pre>
+                    <button class="code-gallery-arrow next" id="codeNextBtn">❯</button>
+                </div>
+                <p id="codeCounter">Example 1 of 2</p>
+            </div>
+        </section>
+        <section id="sql-grid">
+            <h4><br>Google Data Analytics Certificate Program:<br>SQL Proficiency</h4>
+            <div class="sql-documents">
+                <ul>
+                    <li><a href="Certificate-1.pdf" download>Certificate: Foundations: Data, Data, Everywhere</a></li>
+                    <li><a href="Certificate-2.pdf" download>Certificate: Ask Questions to Make Data-Driven Decisions</a></li>
+                    <li><a href="Certificate-3.pdf" download>Certificate: Prepare Data for Exploration</a></li>
+                    <li><a href="Certificate-4.pdf" download>Certificate: Process Data from Dirty to Clean</a></li>
+                    <li><a href="Certificate-5.pdf" download>Certificate: Analyze Data to Answer Questions</a></li>
+                </ul>
+            </div>
+
+            <h4>CSS and HTML Files: Code for this Portfolio</h4>
+            <div class="code-files">
+                <ul>
+                    <li><a href="Design.css" download>CSS Design Code</a></li>
+                    <li><a href="PortfolioSite.html" download>About Me Page HTML Code</a></li>
+                    <li><a href="education-coding.html" download>Education Dropdown: Coding Tab HTML Code</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+        <footer>
+        <p>&copy; 2024 Emmett Meier. All rights reserved.</p>
+    </footer>
+<script>
+    const codeExamples = [
+        {
+            title: "Example 1: Python Flow Control Assignment",
+            code: `#Python Flow Control Assignment
+# %% [code]
+
+sex = input("Patient sex: ")
+height = float(input("Patient height: "))
+weight = float(input("Patient weight: "))
+
+too_tall_flag = False
+too_short_flag = False
+too_heavy_flag = False
+too_light_flag = False
+
+if sex:
+  first_letter = sex[0].lower()
+  if first_letter == "m" or first_letter == "1":
+    sex = "Male"
+    print("Male")
+  elif first_letter == "f" or first_letter == "w" or first_letter == "0":
+    sex = "Female"
+    print("Female")
+  else:
+    print(f"Invalid sex input: {sex}.Please enter sex.")
+if sex == "Male":
+  if height < 62:
+    too_short_flag = True
+    print("Patient is too short.")
+  elif height > 80:
+    too_tall_flag = True
+    print("Patient is too tall.")
+  else:
+    print("Patient is correct height.")
+elif sex == "Female":
+  if height < 59:
+    too_short_flag = True
+    print("Patient is too short.")
+  elif height > 71:
+      too_tall_flag = True
+      print("Patient is too tall.")
+  else:
+    print("Patient is correct height.")
+if sex == "Male":
+  if weight < 150:
+    too_light_flag = True
+    print("Patient is too light.")
+  elif weight > 280:
+    too_heavy_flag = True
+    print("Patient is too heavy.")
+  else:
+    print("Patient is correct weight.")
+elif sex == "Female":
+  if weight < 100:
+    too_light_flag = True
+    print("Patient is too light.")
+  elif weight > 180:
+    too_heavy_flag = True
+    print("Patient is too heavy.")
+  else:
+    print("Patient is correct weight.")
+`
+        },
+        {
+            title: "Example 2: Functions",
+            code: `# Python IPO Assignment
+# %% [code]
+
+employee1 = input("What is the first employees name?")
+employee2 = input("What is the second employees name?")
+employee3 = input("What is the third employees name?")
+w1 = int(input("How many hours did "+ employee1 + " work?"))
+w2 = int(input("How many hours did "+ employee2 + " work?"))
+w3 = int(input("How many hours did "+ employee3 + " work?"))
+hourly_rate_1 = float(input("How much does "+ employee1 + " make an hour?"))
+hourly_rate_2 = float(input("How much does "+ employee2 + " make an hour?"))
+hourly_rate_3 = float(input("How much does "+ employee3 + " make an hour?"))
+
+
+tax_rate = .2
+
+employee1_gross_pay = 0
+employee2_gross_pay = 0
+employee3_gross_pay = 0
+
+employee1_taxes_owed = 0
+employee2_taxes_owed = 0
+employee3_taxes_owed = 0
+
+employee1_net_pay = 0
+employee2_net_pay = 0
+employee3_net_pay = 0
+
+#Process
+#Gross Pay Calculation
+if w1<=40:
+  employee1_gross_pay = w1 * hourly_rate_1
+  if w1>40:
+    employee1_gross_pay = (hourly_rate_1 * 1.5)
+  elif w1>50:
+    employee1_gross_pay = (hourly_rate_1 * 1.6)
+if w2<=40:
+  employee2_gross_pay = w2 * hourly_rate_2
+  if w2>40:
+    employee2_gross_pay = (hourly_rate_2 * 1.5)
+  elif w2>50:
+    employee2_gross_pay = (hourly_rate_2 * 1.6)
+if w3<=40:
+  employee3_gross_pay = w3 * hourly_rate_3
+  if w3>40:
+    employee3_gross_pay = (hourly_rate_3 * 1.5)
+  elif w3>50:
+    employee3_gross_pay = (hourly_rate_3 * 1.6)
+
+#Net Pay Calculation
+if w1<=40:
+  employee1_net_pay = w1 * hourly_rate_1 * (1-tax_rate)
+  if w1>40:
+    employee1_net_pay = (hourly_rate_1 * 1.5) * (1-tax_rate)
+  elif w1>50:
+    employee1_net_pay = (hourly_rate_1 * 1.6)* (1-tax_rate)
+if w2<=40:
+  employee2_net_pay = w2 * hourly_rate_2 * (1-tax_rate)
+  if w2>40:
+    employee2_net_pay = (hourly_rate_2 * 1.5) * (1-tax_rate)
+  elif w2>50:
+    employee2_net_pay = (hourly_rate_2 * 1.6)* (1-tax_rate)
+if w3<=40:
+  employee3_net_pay = w3 * hourly_rate_3 * (1-tax_rate)
+  if w3>40:
+    employee3_net_pay = (hourly_rate_3 * 1.5) * (1-tax_rate)
+  elif w3>50:
+    employee3_net_pay = (hourly_rate_3 * 1.6)* (1-tax_rate)
+total_w = w1+w2+w3
+total_hourly_wage = hourly_rate_1+hourly_rate_2+hourly_rate_3
+total_gross_pay = employee1_gross_pay+employee2_gross_pay+employee3_gross_pay
+total_net_pay = employee1_net_pay+employee2_net_pay+employee3_net_pay
+employee_count = 3
+
+#Output
+print("\x1b[4mEmployee Name  Hours Worked  Hourly Wage  Tax Rate  Gross Pay  Net Pay\x1b[0;37;48m")
+print(f'\x1b[1m {employee1:^15} \x1b[0m{w1:^7} {hourly_rate_1:^20.2f} {tax_rate:^0.2f} {employee1_gross_pay:^9.2f} \x1b[91m{employee1_net_pay:^10.2f}\x1b[37m')
+print(f'\x1b[1m {employee2:^15} \x1b[0m{w2:^7} {hourly_rate_2:^20.2f} {tax_rate:^0.2f} {employee2_gross_pay:^9.2f} \x1b[91m{employee2_net_pay:^10.2f}\x1b[37m')
+print(f'\x1b[4m\x1b[1m {employee3:^15} \x1b[0m\x1b[4m{w3:^7} {hourly_rate_3:^20.2f} {tax_rate:^0.2f} {employee3_gross_pay:^9.2f} \x1b[91m{employee3_net_pay:^10.2f}\x1b[37m\x1b[0m')
+print(f'\x1b[1m {employee_count:^15} \x1b[0m{total_w:^7} {total_hourly_wage:^20.2f} {tax_rate:^0.2f} {total_gross_pay:^9.2f} \x1b[91m{total_net_pay:^10.2f}')
+        `
+        }
+    ];
+
+    let codeIndex = 0;
+    const codeDisplay = document.getElementById('codeDisplay');
+    const codeCounter = document.getElementById('codeCounter');
+
+    function updateCodeDisplay(index) {
+        codeIndex = (index + codeExamples.length) % codeExamples.length;
+        codeDisplay.textContent = codeExamples[codeIndex].code;
+        codeCounter.textContent = `Example ${codeIndex + 1} of ${codeExamples.length}`;
+    }
+
+    document.getElementById('codePrevBtn').addEventListener('click', () => {
+        updateCodeDisplay(codeIndex - 1);
+    });
+
+    document.getElementById('codeNextBtn').addEventListener('click', () => {
+        updateCodeDisplay(codeIndex + 1);
+    });
+
+    // Initialize
+    updateCodeDisplay(0);
+</script>
+</body>
+</html>
