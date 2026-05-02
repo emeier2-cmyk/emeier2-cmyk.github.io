@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmett's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="asu-logo.jpg" alt="ASU Logo" id="logo">
+        <h1>Emmett Meier</h1>
+        <h2>Professional and Academic Portfolio</h2>
+    </header>
+
+    <nav>   
+        <ul>
+            <a href="index.html">About Me</a>
+            <li class="nav-item dropdown">
+            <a href="education.html">Education</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education-coding.html">Coding</a></li>
+                    <li><a href="education-dataanalysis.html">Data Analysis</a></li>
+                </ul>
+            </li>
+            <a href="experience.html">Professional Experience</a>
+            <a href="contact.html">Contact Me</a>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="contact-grid">
+            <form action="mailto:emeier2@asu.edu" method="post" enctype="text/plain">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+            <section>
+                <div class="social-media">
+                    <h4><br>Connect with Me</h4>
+                    <div class="centered">
+                        <a href="https://www.linkedin.com/in/emmett-meier-9b1b8a1b3/" target="_blank">LinkedIn</a>   
+                    </div>
+                </div>
+            </section>
+        <footer>
+            <p>&copy; 2024 Emmett Meier. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
+

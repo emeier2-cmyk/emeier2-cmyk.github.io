@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmett's Portfolio</title>
+    <link rel="stylesheet" href="Design.css">
+</head>
+<body>
+    <header>
+        <img src="asu-logo.jpg" alt="ASU Logo" id="logo">
+        <h1>Emmett Meier</h1>
+        <h2>Professional and Academic Portfolio</h2>
+    </header>
+
+    <nav>   
+        <ul>
+            <a href="index.html">About Me</a>
+            <li class="nav-item dropdown">
+            <a href="education.html">Education</a>
+                <ul class="dropdown-menu">
+                    <li><a href="education-coding.html">Coding</a></li>
+                    <li><a href="education-dataanalysis.html">Data Analysis</a></li>
+                </ul>
+            </li>
+            <a href="experience.html">Professional Experience</a>
+            <a href="contact.html">Contact Me</a>
+        </ul>
+    </nav>
+    <div class="grid">
+        <section id="headshot-grid">
+            <div class="gallery">
+            <div class="gallery-main">
+                <button class="gallery-arrow prev" id="prevBtn">&lt;</button>
+                <img id="galleryImage" src="profile picture.jpg" alt="Gallery image">
+                <button class="gallery-arrow next" id="nextBtn">&gt;</button>
+            </div>
+
+            <div class="gallery-thumbs">
+                <img class="thumb active" src="profile picture.jpg" data-full='profile-picture.jpg' alt="Photo 1">
+                <img class="thumb" src='seattle.jpg'.jpg" data-full='seattle.jpg' alt="Photo 2">
+                <img class="thumb" src="poopy-sleeping.jpg" data-full='poopy-sleeping.jpg' alt="Photo 3">
+                <img class="thumb" src="teeny-photo.jpg" data-full='teeny-photo.jpg' alt="Photo 4">
+            </div>
+        </section>
+        <section id="about-grid";>
+            <p> Hello and thank you for navigating to my portfolio! My name is Emmett and I am glad you are here. Before you dive into my academic and professional portfolio, I want to share a little bit about myself. I am a soon-to-be graduate currently working as a Shift Supervisor at Starbucks in Portland, Oregon. I have been with this company for almost 7 years, and am excited to transition into fields related to my degree program. 
+
+<br><br>Beyond my career and academics, I am father to 2 precious cats and have been with my fiancée for almost 10 years. We moved here from Southern California almost 4 years ago seeking the great outdoors and opportunities for exploration of the Pacific Northwest. We have found many beautiful towns and trails, spectacular food (some of the best restaurants I think I will ever experience), and built an amazing community here with some of our closest friends and family. We are very lucky to be living such a wonderful life.
+
+<br><br><br>To get a sense of the person you will potentially work with, I want to share the 7 core values that I live by:<br><br> </p>
+                <table> 
+                    <tr>
+                        <td>Mentorship</td>
+                        <td>Integrity</td>
+                        <td>Discipline</td>
+                        <td>Collaboration</td>
+                    </tr>
+                    <tr>
+                        <td>Trust</td>
+                        <td>Accountability</td>
+                        <td>Community</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+        <p>&copy; 2024 Emmett Meier. All rights reserved.</p>
+    </footer>
+    <script>
+        const images = [
+        
+            'profile picture.jpg',
+            'seattle.jpg',
+            'poopy-sleeping.jpg',
+            'teeny-photo.jpg'
+        ];
+
+        let currentIndex = 0;
+        const galleryImage = document.getElementById('galleryImage');
+        const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+
+        function updateGallery(index) {
+        currentIndex = (index + images.length) % images.length;
+        galleryImage.src = images[currentIndex];
+
+        thumbs.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentIndex);
+        });
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+        updateGallery(currentIndex - 1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+        updateGallery(currentIndex + 1);
+        });
+
+        thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => updateGallery(index));
+        });
+        </script>
+    </body>
+</html>
